@@ -4,7 +4,7 @@ function MostCommonStr(array){
       if (count[array[i]]){
         count[array[i]]+=1
       }else{
-      (count[array[i]]=1);222
+      (count[array[i]]=1);
       }
     }
   
