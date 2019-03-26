@@ -1,0 +1,31 @@
+CREATE DATABASE assessment; 
+
+CREATE TABLE apprentices(
+    id SERIAL, 
+    name TEXT,
+    birthDate TEXT,
+    favColor TEXT
+);
+
+
+INSERT INTO apprentices (name, birthDate, favColor) VALUES ('Leah','03-25-1988' , 'green');
+
+
+INSERT INTO apprentices (name, birthDate, favColor) VALUES ('Obah','02-22-1822','silver'), ('Izabell','10-09-1995','red'), ('Dena','01-03-1988','pink');
+
+SELECT * FROM apprentices;
+
+CREATE TABLE projects(
+    id SERIAL, 
+    name TEXT,
+    dateCreated TEXT,
+    linesOfCode INTEGER,
+    apprenticeId INTEGER
+);
+
+INSERT INTO projects (name, dateCreated, linesOfCode, apprenticeId) VALUES ('Eventonica','02-22-1822',300,1),('CatPics','02-22-1822',800,1),('Trees','02-22-1822',3000,4),('Trees','02-22-1822',3000,3);
+
+SELECT * FROM projects as p INNER JOIN apprentices AS a ON p.apprenticeId = a.id WHERE p.apprenticeId = '1'; 
+
+UPDATE  apprentices SET  birthDate =' 1/1/1900' WHERE name='Leah';
+
